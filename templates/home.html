@@ -19,15 +19,15 @@
     {% include 'header.html' %}
     <div class="container" style="margin-top:70px">
       <div class="row">
-      <h3 class="text-center">{{company_name}} Career</h3>
+       
       </div>
     </div>
     <div><img  src="static/images/career-banner-1.jpg" class="img-fluid" alt="..." id="banner"></div>
-    <div class="container">
+    <div class="container" style="margin-top:20px">
       <div class="row">
-        <div class="col-md-6">
-      <h3 class="text-center">About Christo Career</h3>
-      <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.</p></div><div class="col-md-6"><img  src="static/images/job.jpg" class="img-fluid" alt="..." id="banner"></div>
+        <div class="col-md-8">
+      <h3 class="text-center shadow-sm" >About Christo Career</h3>
+      <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.</p></div><div class="col-md-4"><img  src="static/images/banner.jpg" class="img-fluid" alt="..." id="banner"></div>
         <h3 class="text-center">Open Positions</h3>
         <div>
         {% for job in jobs %}
@@ -36,11 +36,11 @@
       {% endfor %}
       </div>
         
-        <div class="text-center">
-        <button type="button" class="btn btn-primary btn-lg">Contact Us</button></div>
+        <div class="text-center" style="margin-top:20px">
+        <a href="mailto:teamdunamis101@gmail.com?subject=Question%20about%20Job%20opening&body=My%20Name%3A%20%3CEnter%20Your%20Name%3E%0D%0AMy%20Question%3A%20%3CEnter%20Your%20Question%20Here%3E%0D%0A "  class="btn btn-primary btn-lg">Contact Us</a></div>
       </div>
     </div>
     
-
+{% include 'footer.html' %}
   </body>
 </html>
