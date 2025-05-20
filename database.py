@@ -3,7 +3,7 @@ from sqlalchemy import create_engine, text
 import os
 
 # Replace with your actual connection string
-db_connection_string = os.environ['DB_CONNECTION_STRING']
+db_connection_string = os.environ.get['DB_CONNECTION_STRING']
 engine = create_engine(db_connection_string, connect_args={
 "ssl": {
     "ca": "isrgrootx1.pem",
