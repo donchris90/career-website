@@ -1,5 +1,7 @@
 from sqlalchemy import create_engine,text
 import os
+from dotenv import load_dotenv
+load_dotenv()
 
 
 db_connection_string = os.environ['DB_CONNECTION_STRING']
