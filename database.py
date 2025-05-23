@@ -3,7 +3,10 @@ import os
 
 
 
-db_connection_string = os.environ['DB_CONNECTION_STRING']
+db_connection_string = os.getenv('DB_CONNECTION_STRING')
+if db_connection_string is None:
+    raise RuntimeError("Environment variable DB_CONNECTION_STRING is not set.")
+
 engine = create_engine(db_connection_string,connect_args={
                        "ssl": {
                           "ca": "isrgrootx1.pem",
