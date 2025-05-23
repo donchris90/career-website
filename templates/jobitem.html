@@ -1,27 +1,26 @@
-<div class="container border-bottom " >
-<div class="row" >
-<div class="col-9 " >
-<div style="margin-top:16px">
-<h3>{{job['title']}}</h3></div>
-<div><b>Location:</b> {{job['location']}}</div>
-  {% if 'salary' in job %}
-    {% if job['salary'] == 'Negotiable' %}
-      <p><b>Salary:</b> Negotiable</p>
-    {% else %}
-      <p><b>Salary:</b> ${{ job['salary'] | int | format("%,d") }}</p>
-    {% endif %}
-  {% else %}
-    <p><i>Salary not disclosed</i></p>
-  {% endif %}
+<div class="container border-bottom py-3">
+  <div class="row">
+    <!-- Job Details -->
+    <div class="col-9">
+      <div class="mt-2">
+        <h3>{{ job['title'] }}</h3>
+      </div>
+      <div><b>Location:</b> {{ job['location'] }}</div>
 
-  
-  
-         
+      {% if 'salary' in job %}
+        {% if job['salary'] == 'Negotiable' %}
+          <p><b>Salary:</b> Negotiable</p>
+        {% else %}
+          <p><b>Salary:</b> {{ (job['salary'] ) }}</p>
+        {% endif %}
+      {% else %}
+        <p><i>Salary not disclosed</i></p>
+      {% endif %}
+    </div>
+
+    <!-- Apply Button -->
+    <div class="col-3 d-flex align-items-center justify-content-center">
+      <a href="/job/{{ job['id'] }}" class="btn btn-primary">Apply</a>
+    </div>
+  </div>
 </div>
-
-
- <div class="col-3" style="display: flex;align-items: center; justify-content: center;">
-<a href="mailto:teamdunamis101@gmail.com?subject=Application%20for%20{{job['title']}}&body=Your%20Name%3A%20%3CEnter%20Your%20Name%3E%0D%0AYour%20Resume%20Link%3A%20%3CEnter%20Your%20resume%20link%3E%0D%0AYour%20LinkedIn%20Link%3A%20%3C%20Enter%20Your%20Linkedln%20Link%3E " class="btn btn-primary" >Apply</a></div></div></div>
-    
- 
-    

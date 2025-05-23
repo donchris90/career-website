@@ -1,0 +1,17 @@
+<div><h4>Application Form</h4>
+<form action="/job/{{job.id}}/apply" method="post">
+ <div> <label>Full Name</label><br>
+<input type="text" placeholder="Enter your full name" name="full_name" required"></div>
+  <div><label>Email</label><br>
+  <input type="text" placeholder="Enter your email" name="email" required"></div>
+  <div><label>Linkedln URL</label><br>
+  <input type="text" placeholder="Enter your Linkedln Url" name="linkedin_url" required"></div>
+  <div><label>Education</label><br>
+  <textarea type="text"  name="education" required"></textarea></div>
+  <div><label>Work Experience</label><br>
+  <textarea type="text"  name="work_experience" required"></textarea></div>
+  <div><label>Resume URL</label><br>
+  <input type="text" placeholder="Enter your Resume Url" name="resume_url" required"></div>
+  <input type="submit" value="Apply">
+</form>
+</div>
