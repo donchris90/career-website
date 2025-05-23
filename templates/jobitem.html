@@ -6,12 +6,13 @@
         <h3>{{ job['title'] }}</h3>
       </div>
       <div><b>Location:</b> {{ job['location'] }}</div>
-
-      {% if 'salary' in job %}
+      
+      
+      {% if job.salary %}
         {% if job['salary'] == 'Negotiable' %}
           <p><b>Salary:</b> Negotiable</p>
         {% else %}
-          <p><b>Salary:</b> {{ (job['salary'] ) }}</p>
+          <p><b>Salary:</b> {{ job.currency}}{{ job.salary }}</p>
         {% endif %}
       {% else %}
         <p><i>Salary not disclosed</i></p>

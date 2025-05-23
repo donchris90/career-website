@@ -16,7 +16,15 @@
     <p>{{job.job_description}}</p>
     <h3>Location:</h3>
     <p> {{job.location}}</p>
-  <h3>Salary:</h3>{{job.currency}} {{job.salary}}</p>
+      {% if job.salary %}
+        {% if job['salary'] == 'Negotiable' %}
+          <p><b>Salary:</b> Negotiable</p>
+        {% else %}
+          <p><b>Salary:</b> {{ job.currency }}{{ job.salary }}</p>
+        {% endif %}
+      {% else %}
+        <p><i>Salary not disclosed</i></p>
+      {% endif %}
      
     <h3>Responsiblities:</h3><p> <ul>
       {% for line in job.responsibilities.split('\n') %}

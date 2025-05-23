@@ -1,0 +1,91 @@
+
+<style>
+  body {
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  .login-card {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    max-width: 400px;
+  }
+  .login-card h4 {
+    font-weight: 600;
+  }
+  .form-control:focus {
+    border-color: #2575fc;
+    box-shadow: none;
+  }
+  .form-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #6c757d;
+  }
+  .form-group {
+    position: relative;
+  }
+  .form-control {
+    padding-left: 2.5rem;
+  }
+</style>
+<nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top shadow-sm">
+  <div class="container">
+
+    <a class="navbar-brand" href="#"><img src="static/images/bootstrap-logo.svg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 right">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{{ url_for('home') }}">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Find Job</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contact Us</a>
+        </li>
+
+      </ul>
+        
+    </div>
+  </div>
+</nav>
+{% include 'nav.html' %}
+<div class="login-card">
+    <h4 class="text-center mb-4">Register</h4>
+  {% if error %}
+    <p style="color:red;">{{ error }}</p>
+  {% endif %}
+    <form method="post">
+      <div class="form-group mb-3">
+        <i class="bi bi-envelope form-icon"></i>
+        <input type="email" class="form-control" placeholder="Email address" name="email" required>
+      </div>
+      <div class="form-group mb-3">
+        <i class="bi bi-lock form-icon"></i>
+        <input type="password" class="form-control" placeholder="Password" name="password" required>
+      </div>
+       
+      <div class="d-grid">
+        <input type="submit"  class="btn btn-primary"value="Register">
+         
+      </div>
+      <div class="text-center mt-3">
+        <small>Already have an account? <a href="{{ url_for('login') }}" class=" text-secondary" style="color:#000000">Login Here</a></small>
+      </div>
+    </form>
+  </div>
