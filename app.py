@@ -53,9 +53,12 @@ def login():
 
 @app.route('/dashboard')
 def dashboard():
+    user = session.get('user') 
     if 'user' not in session:
         return redirect('/login')
-    return f"Welcome, {session['user']}! <a href='/logout'>Logout</a>"
+        
+    return render_template('dashboard.html',user=user)
+    
 
 @app.route('/logout')
 def logout():
@@ -91,6 +94,7 @@ def send_notification_email(application, job):
     password = os.environ.get('EMAIL_PASSWORD')         # Gmail App Password
     recipient = application['email']                # or HR email
 
+
     msg = MIMEMultipart()
     msg['From'] = sender
     msg['To'] = recipient
@@ -103,7 +107,7 @@ def send_notification_email(application, job):
     We have received your application and will review it shortly.
 
     Best regards,  
-    Christo Career Team
+    Chuvek Career Team
     """
     msg.attach(MIMEText(body, 'plain'))
 
@@ -114,6 +118,8 @@ def send_notification_email(application, job):
         print("Email sent successfully.")
     except Exception as e:
         print("Failed to send email:", e)
+
+
 
 
 
